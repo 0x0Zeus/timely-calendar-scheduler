@@ -3,8 +3,8 @@ import { FocusableElement, DOMAttributes } from "@react-types/shared";
 import { type AriaButtonProps } from "@react-aria/button";
 import { useDateFormatter } from "@react-aria/i18n";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CalendarButton } from "./CalendarButton";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function CalendarHeader({
   state,
@@ -41,13 +41,13 @@ export function CalendarHeader({
       </h2>
 
       <div className="flex items-center gap-2">
-       <CalendarButton {...prevButtonProps}>
+        <CalendarButton {...prevButtonProps}>
           <ChevronLeft className="size-4" />
-       </CalendarButton>
-       <CalendarButton {...nextButtonProps}>
-        <ChevronRight className="size-4" />
-       </CalendarButton>
+        </CalendarButton>
+        <CalendarButton {...nextButtonProps}>
+          <ChevronRight className="size-4" />
+        </CalendarButton>
       </div>
     </div>
   );
-} 
+}
