@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from '@/public/timely_logo.png';
 import { AuthModal } from "./AuthModal";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar(){
     return (
@@ -13,7 +14,10 @@ export function Navbar(){
                 </h4>
             </Link>
 
-            <AuthModal />
+            <div className="hidden md:flex md:justify-end md:space-x-4">
+                <ThemeToggle />
+                <AuthModal />
+            </div>
         </div>
     )
 } 
