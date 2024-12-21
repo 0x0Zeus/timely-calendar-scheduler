@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { Hero } from "./components/Hero";
 import { Logos } from "./components/Logos";
 import { Features } from "./components/Features";
+import { Testimonial } from "./components/Testimonial";
 
 export default async function Home() {
 
@@ -20,6 +21,7 @@ export default async function Home() {
       <Hero />
       <Logos />
       <Features />
+      <Testimonial />
     </div>
   );
 }
