@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { auth, signOut } from '../lib/auth';
+import { signOut } from '../lib/auth';
 import { requireUser } from '../lib/hooks';
 import prisma from '../lib/db';
 import { redirect } from 'next/navigation';

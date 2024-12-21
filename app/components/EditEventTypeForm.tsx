@@ -3,7 +3,7 @@
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { useActionState, useState } from "react";
-import { CreateEventTypeAction, EditEventTypeAction } from "../actions";
+import { EditEventTypeAction } from "../actions";
 import { eventTypeSchema } from "../lib/zodSchemas";
 import {
   Card,

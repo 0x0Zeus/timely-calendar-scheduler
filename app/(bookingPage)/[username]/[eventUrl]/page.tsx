@@ -1,6 +1,5 @@
 import { CreateMeetingAction } from "@/app/actions";
 import { SubmitButton } from "@/app/components/SubmitButtons";
-import { Calendar } from "@/app/components/bookingForm/Calendar";
 import { RenderCalendar } from "@/app/components/bookingForm/RenderCalendar";
 import { TimeTable } from "@/app/components/bookingForm/TimeTable";
 import prisma from "@/app/lib/db";

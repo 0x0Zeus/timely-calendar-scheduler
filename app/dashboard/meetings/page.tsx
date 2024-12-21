@@ -1,7 +1,7 @@
 import { CancelMeetingAction } from "@/app/actions";
 import { EmptyState } from "@/app/components/EmptyState";
 import { SubmitButton } from "@/app/components/SubmitButtons";
-import prisma from "@/app/lib/db"
+import prisma from "@/app/lib/db";
 import { requireUser } from "@/app/lib/hooks";
 import { nylas } from "@/app/lib/nylas";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

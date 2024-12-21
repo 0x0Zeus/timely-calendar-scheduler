@@ -1,15 +1,13 @@
-import { notFound, redirect } from "next/navigation";
-import { auth } from "../lib/auth"
-import { requireUser } from "../lib/hooks";
-import prisma from "../lib/db";
-import { EmptyState } from "../components/EmptyState";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ExternalLink, Link2, Pen, Settings, Trash, Users2 } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { ExternalLink, Pen, Settings, Trash, Users2 } from "lucide-react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { CopyLinkMenuItem } from "../components/CopyLinkMenu";
+import { EmptyState } from "../components/EmptyState";
 import { MenuActiveSwitch } from "../components/EventTypeSwitcher";
+import prisma from "../lib/db";
+import { requireUser } from "../lib/hooks";
 
 async function getData(userId: string) {
     const data = await prisma.user.findUnique({
