@@ -291,3 +291,37 @@ export async function EditEventTypeAction(prevState: any, formData: FormData) {
   
     return redirect("/dashboard");
 }
+
+export async function UpdateEventTypeStatusAction(prevState: any, {
+    eventTypeId,
+    isChecked,
+  }: {
+    eventTypeId: string;
+    isChecked: boolean;
+  }
+) {
+  try {
+    const session = await requireUser();
+
+    const data = await prisma.eventType.update({
+      where: {
+        id: eventTypeId,
+        userId: session.user?.id as string,
+      },
+      data: {
+        active: isChecked,
+      },
+    });
+
+    revalidatePath(`/dashboard`);
+    return {
+      status: "success",
+      message: "EventType Status updated successfully!",
+    };
+  } catch (error) {
+    return {
+      status: "error",
+      message: "Something went wrong",
+    };
+  }
+}
