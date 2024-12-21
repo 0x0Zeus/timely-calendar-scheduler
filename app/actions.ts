@@ -263,3 +263,31 @@ export async function CancelMeetingAction(formData: FormData) {
   
     revalidatePath("/dashboard/meetings");
 }
+
+export async function EditEventTypeAction(prevState: any, formData: FormData) {
+    const session = await requireUser();
+  
+    const submission = parseWithZod(formData, {
+      schema: eventTypeSchema,
+    });
+  
+    if (submission.status !== "success") {
+      return submission.reply();
+    }
+  
+    const data = await prisma.eventType.update({
+      where: {
+        id: formData.get("id") as string,
+        userId: session.user?.id,
+      },
+      data: {
+        title: submission.value.title,
+        duration: submission.value.duration,
+        url: submission.value.url,
+        description: submission.value.description,
+        videoCallSoftware: submission.value.videoCallSoftware,
+      },
+    });
+  
+    return redirect("/dashboard");
+}
