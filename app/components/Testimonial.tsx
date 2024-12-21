@@ -23,7 +23,7 @@ export function Testimonial() {
           </svg>
 
           <span className="relative z-10">
-            Timely has revolutionized my scheduling. It's incredibly fast and intuitive, making meeting management a breeze. Highly recommend!
+            Timely has revolutionized my scheduling. It&#39;s incredibly fast and intuitive, making meeting management a breeze. Highly recommend!
           </span>
         </p>
 
