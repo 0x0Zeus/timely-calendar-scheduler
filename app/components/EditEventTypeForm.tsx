@@ -92,7 +92,7 @@ const [activePlatform, setActivePlatform] = useState<VideoCallProvider>(callProv
               <Label>URL Slug</Label>
               <div className="flex rounded-md">
                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-muted bg-muted text-sm text-muted-foreground">
-                  CalMarshal.com/
+                  Timely.com/
                 </span>
                 <Input
                   name={fields.url.name}
