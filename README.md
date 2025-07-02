@@ -1,4 +1,4 @@
-![Timly Banner](./public/timly.png)
+![Timly Banner](https://raw.githubusercontent.com/username/timely/main/public/timly.png)
 
 # Timely – Calendar Scheduling Application
 
