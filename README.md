@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Timly Banner](./public/timly.png)
+
+# Timely – Calendar Scheduling Application
+
+Timely is a modern, full-stack calendar scheduling application built with Next.js, React, and Prisma. It enables users to manage their availability, create event types, and allow others to book meetings seamlessly. Timely integrates with external calendars and provides a clean, accessible user experience.
+
+## Features
+- User authentication (NextAuth.js with OAuth support)
+- Dashboard for managing events, availability, and meetings
+- Customizable event types and booking pages
+- Calendar integration (Nylas)
+- File uploads (UploadThing)
+- Responsive, accessible UI (Radix UI, Tailwind CSS)
+- Schema-based form validation (Zod, Conform)
+
+## Tech Stack
+- **Frontend:** Next.js (App Router), React, Tailwind CSS, Radix UI
+- **Backend:** Next.js API routes, Prisma ORM, Nylas API
+- **Authentication:** NextAuth.js (Auth.js), Prisma Adapter
+- **Validation:** Zod, Conform
+- **File Uploads:** UploadThing
+- **Database:** PostgreSQL (via Prisma)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (v18 or later recommended)
+- npm, yarn, pnpm, or bun
+- PostgreSQL database
 
-```bash
-npm run dev
-# or
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd Calander-Schedular
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+yarn install
+   # or
+pnpm install
+   ```
+3. Set up environment variables:
+   - Copy `.env.example` to `.env` (create one if not present)
+   - Add the following variables:
+     ```env
+     DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<db>
+     NEXTAUTH_SECRET=<your_generated_secret>
+     # Add Nylas, UploadThing, and other required secrets here
+     ```
+4. Run database migrations:
+   ```bash
+   npx prisma migrate deploy
+   # or
+   npx prisma migrate dev
+   ```
+5. Start the development server:
+   ```bash
+   npm run dev
+   # or
 yarn dev
-# or
+   # or
 pnpm dev
-# or
-bun dev
-```
+   ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
+- Sign up or log in with your preferred authentication provider
+- Connect your calendar account
+- Set your availability and create event types
+- Share your booking link with others
+- Manage your meetings and settings from the dashboard
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
+The recommended way to deploy Timely is on [Vercel](https://vercel.com/). For other deployment options, refer to the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
+Contributions are welcome! Please open issues or pull requests for improvements, bug fixes, or new features.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License.
